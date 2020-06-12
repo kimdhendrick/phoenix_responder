@@ -1,0 +1,12 @@
+pairs:
+  dm: David Madouros
+  cj: Chelsea Johnson
+  sg: Seth Geyer
+  al: Anna Lewis
+  kb: Kyle Behrens
+  kh: Kim Hendrick
+email:
+  prefix: pair
+  domain: rxrevu.com
+  no_solo_prefix: true
+global: false  # Set to true for git-pair to change git configuration for all your projects
