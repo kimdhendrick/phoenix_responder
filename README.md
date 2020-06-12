@@ -1,24 +1,25 @@
-# README
+# SwiftRx Responder
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Create .env files:
+    - `.env/development/database`
+    - `.env/development/web`
+    - See `.env.example` for all the environment variables
+  
+## Database setup:
+    - `docker-compose up -d responder_database`
+    - `docker-compose run responder bundle exec rake db:create`
 
-Things you may want to cover:
+## Open bash console for responder_database:
+    - `docker-compose run --rm responder_database bash`
 
-* Ruby version
+## Open bash console for responder:
+    - `docker-compose run --rm responder bash`
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Run specs:
+    - inside a responder bash console:
+      - `./test.sh`
+      - connect to test db while in a running test: `psql -U postgres -h responder_database responder_test`
+   
+## Run Responder:
+    - `docker-compose up -d`
+    - Browser to: localhost:3002

@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  responder:
+    build: .
+    ports:
+      - "3002:3000"
+      - "8081:9394"
+    volumes:
+      - .:/usr/src/app
+      - gem_cache:/gems
+    env_file:
+      - .env/development/database
+      - .env/development/web
+      - .env/development/apm
+    networks:
+      - elk
+      - app-net
+
+  responder_database:
+    image: postgres
+    env_file:
+      - .env/development/database
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - app-net
+
+volumes:
+  db_data:
+  gem_cache:
+
+networks:
+  elk:
+    external:
+      name: docker-elk_elk
+  app-net:
+    external:
+      name: development
