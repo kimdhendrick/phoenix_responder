@@ -1,4 +1,0 @@
-DATABASE_HOST=responder_database
-SERVICE_ENVIRONMENT=responder_service
-HOSTNAME=localhost
-RAILS_ENV=development

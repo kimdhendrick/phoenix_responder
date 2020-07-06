@@ -1,3 +1,0 @@
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=responder_test
-POSTGRES_DB=responder_test
